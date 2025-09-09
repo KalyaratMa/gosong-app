@@ -7,7 +7,7 @@ const HomeIcon = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" widt
 const ShoppingCartIcon = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.16"></path></svg>;
 const UserIcon = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>;
 const SearchIcon = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>;
-const PlusCircleIcon = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>;
+const PlusCircleIcon = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>;
 const MinusCircleIcon = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="12" cy="12" r="10"></circle><line x1="8" y1="12" x2="16" y2="12"></line></svg>;
 const ChevronLeftIcon = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="15 18 9 12 15 6"></polyline></svg>;
 const SpecialDrinkIcon = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>;
@@ -142,7 +142,7 @@ export default function ClientPage({ initialProducts }) {
         });
 
         // Show toast notification
-        setToastMessage(`เพิ่ม "${productToAdd.thaiName}" ลงตะกร้าแล้ว`);
+        setToastMessage(`เพิ่ม "${productToAdd.name}" ลงรายการโปรดแล้ว`);
         // Hide toast after 3 seconds
         setTimeout(() => {
             setToastMessage('');
@@ -171,7 +171,7 @@ export default function ClientPage({ initialProducts }) {
             case 'menu':
             case 'home':
             default:
-                const productsToShow = selectedCategory ? filteredProducts : (products ? products.slice(0, 3) : []);
+                const productsToShow = selectedCategory ? filteredProducts : (products ? products.slice(0, 10) : []);
 
                 return (
                     <div className="p-4 sm:p-6">
@@ -179,7 +179,7 @@ export default function ClientPage({ initialProducts }) {
                         <CategoryNav onSelectCategory={handleSelectCategory} />
                         <div>
                             <div className="flex justify-between items-center mb-4">
-                               <h3 className="text-2xl font-bold text-gray-800">{selectedCategory ? `${selectedCategory} Drinks` : 'Billboard Hot 10™'}</h3>
+                               <h3 className="text-2xl font-bold text-gray-800">{selectedCategory ? `${selectedCategory} ` : 'Billboard Hot 10™'}</h3>
                                {selectedCategory && (
                                    <button onClick={() => setSelectedCategory(null)} className="text-sm font-semibold text-blue-600 hover:underline">แสดงทั้งหมด</button>
                                )}
