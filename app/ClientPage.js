@@ -17,9 +17,7 @@ const SmoothieIcon = ({ className }) => <svg xmlns="http://www.w3.org/2000/svg" 
 
 const GoDrinkLogo = () => (
     <div className="flex items-center space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 50 50">
-            <path d="M39.038,9.076C31.925,9.076,33.674,6,27,6c-1.6,0-2,1-2,2v21c0,2.214-1.032,4-5,4c-5.661,0-8,1.464-8,5 c0,2.383,0.489,6,7.936,6C26.855,44,27,38.682,27,36c0-1.027,0-3.903,0-7V17c0.005-1.355,0.2-2,1-2c5.138,0,3.871,3,11,3 c0,0,2,0,2-1.699c0-2.555,0-4.363,0-5.333C41,9.435,40.312,9.076,39.038,9.076z"></path>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-audio-lines-icon lucide-audio-lines"><path d="M2 10v3"/><path d="M6 6v11"/><path d="M10 3v18"/><path d="M14 8v7"/><path d="M18 5v13"/><path d="M22 10v3"/></svg>
         <span className="text-2xl font-bold tracking-wider">GoSong</span>
     </div>
 );
@@ -181,7 +179,7 @@ export default function ClientPage({ initialProducts }) {
                         <CategoryNav onSelectCategory={handleSelectCategory} />
                         <div>
                             <div className="flex justify-between items-center mb-4">
-                               <h3 className="text-2xl font-bold text-gray-800">{selectedCategory ? `${selectedCategory} Drinks` : 'เมนูแนะนำ'}</h3>
+                               <h3 className="text-2xl font-bold text-gray-800">{selectedCategory ? `${selectedCategory} Drinks` : 'Billboard Hot 10™'}</h3>
                                {selectedCategory && (
                                    <button onClick={() => setSelectedCategory(null)} className="text-sm font-semibold text-blue-600 hover:underline">แสดงทั้งหมด</button>
                                )}
