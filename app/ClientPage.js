@@ -26,7 +26,7 @@ const categories = [
     { name: 'K-POP', thaiName: 'K-POP', icon: CoffeeIcon, color: 'bg-purple-200' },
     { name: 'ไทย', thaiName: 'ไทย', icon: TeaIcon, color: 'bg-violet-200' },
     { name: 'สากล', thaiName: 'สากล', icon: SmoothieIcon, color: 'bg-purple-200' },
-    { name: 'ลุกทุ่ง', thaiName: 'ลูกทุ่ง', icon: SpecialDrinkIcon, color: 'bg-violet-200' },
+    { name: 'ลูกทุ่ง', thaiName: 'ลูกทุ่ง', icon: SpecialDrinkIcon, color: 'bg-violet-200' },
 ];
 
 // --- Components ---
