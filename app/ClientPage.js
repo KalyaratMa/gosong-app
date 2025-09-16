@@ -40,7 +40,7 @@ const Toast = ({ message }) => {
 
     return (
         <div className="fixed bottom-24 md:bottom-10 right-1/2 translate-x-1/2 md:right-10 md:translate-x-0 bg-gray-800 text-white py-3 px-6 rounded-full shadow-lg z-50 animate-bounce">
-            <span>✅ {message}</span>
+            <span>💗 {message}</span>
         </div>
     );
 };
